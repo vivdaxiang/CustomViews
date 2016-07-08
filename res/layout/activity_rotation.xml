@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/rotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rotation" />
+
+    <Button
+        android:id="@+id/rotationBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rotationBy" />
+
+    <Button
+        android:id="@+id/rotationX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rotationX" />
+
+    <Button
+        android:id="@+id/rotationXBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rotationXBy" />
+
+    <Button
+        android:id="@+id/rotationY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rotationY" />
+
+    <Button
+        android:id="@+id/rotationYBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rotationYBy" />
+
+    <Button
+        android:id="@+id/animatingObject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Animating Button" />
+
+</LinearLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x" />
+
+        <Button
+            android:id="@+id/xBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xBy" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="y" />
+
+        <Button
+            android:id="@+id/yBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="yBy" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/translationX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translationX" />
+
+        <Button
+            android:id="@+id/translationXBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translationXBy" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/translationY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translationY" />
+
+        <Button
+            android:id="@+id/translationYBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translationYBy" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/translationZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translationZ" />
+
+        <Button
+            android:id="@+id/translationZBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translationZBy" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="goBack" />
+
+    <Button
+        android:id="@+id/animatingObject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:text="Animating Button" />
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:text="" />
+
+</LinearLayout>
