@@ -10,6 +10,13 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+/**
+ * 
+ *
+ * @author daxiang
+ * @date   2016年7月8日
+ * @time   下午6:18:45
+ */
 public class StickyView extends View {
 
 	// 变化因子，用于设置拖动距离与半径变化的关系
