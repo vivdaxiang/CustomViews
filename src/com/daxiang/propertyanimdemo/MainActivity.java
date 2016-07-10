@@ -1,17 +1,18 @@
 package com.daxiang.propertyanimdemo;
 
-import com.daxiang.propertyanimdemo.animation.CustomEvaluator;
-import com.daxiang.propertyanimdemo.animation.RotationActivity;
-import com.daxiang.propertyanimdemo.animation.StickyAnimActivity;
-import com.daxiang.propertyanimdemo.animation.SystemEvaluator;
-import com.daxiang.propertyanimdemo.animation.TranslateActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
+import com.daxiang.propertyanimdemo.animation.CustomEvaluator;
+import com.daxiang.propertyanimdemo.animation.RotationActivity;
+import com.daxiang.propertyanimdemo.animation.StickyAnimActivity;
+import com.daxiang.propertyanimdemo.animation.SystemEvaluator;
+import com.daxiang.propertyanimdemo.animation.TranslateActivity;
+import com.daxiang.propertyanimdemo.animation.WaveViewActivity;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -34,6 +35,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		findViewById(R.id.systemEvaluator).setOnClickListener(this);
 		findViewById(R.id.customEvaluator).setOnClickListener(this);
 		findViewById(R.id.sticky).setOnClickListener(this);
+		findViewById(R.id.wave).setOnClickListener(this);
 	}
 
 	@Override
@@ -56,7 +58,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.sticky:
-			startActivity(new Intent(MainActivity.this, StickyAnimActivity.class));
+			startActivity(new Intent(MainActivity.this,
+					StickyAnimActivity.class));
+			break;
+
+		case R.id.wave:
+			startActivity(new Intent(MainActivity.this, WaveViewActivity.class));
 			break;
 		}
 	}
