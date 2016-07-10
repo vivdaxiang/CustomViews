@@ -25,7 +25,7 @@ public class WaveView extends View {
 
 	private float mWaveWidth;
 	private float mWaveHeight;
-	private int visibleWaveCount = 2;
+	private int visibleWaveCount = 1;
 
 	private float mLevel;
 
@@ -38,7 +38,9 @@ public class WaveView extends View {
 	private float mViewHeight;
 
 	private float speedVertical = 2;
-	private float speedHorizontal = 2;
+	private float speedHorizontal = 10;
+
+	private boolean isMeasured;
 
 	public WaveView(Context context) {
 		super(context);
@@ -61,7 +63,7 @@ public class WaveView extends View {
 		mPaint = new Paint();
 		mPaint.setAntiAlias(true);
 		mPaint.setStyle(Style.FILL);
-		mPaint.setColor(0xff3F85E4);
+		mPaint.setColor(0xff36BDE1);
 
 		mPath = new Path();
 	}
@@ -69,39 +71,46 @@ public class WaveView extends View {
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		mWaveWidth = getMeasuredWidth() / visibleWaveCount;
-		mWaveHeight = getMeasuredWidth() / 8;
-		mLevel = mViewHeight = getMeasuredHeight();
-		mLeftSide = -mWaveWidth;
-		float x;
-		float y;
-		Point point;
-		for (int i = 0; i < 4 * visibleWaveCount + 1 + 4; i++) {
-			x = i * (mWaveWidth / 4) - mWaveWidth;
-			y = 0;
-			switch (i % 4) {
-			case 0:
-				y = mLevel;
-				break;
+		if (!isMeasured) {
+			isMeasured = true;
+			mWaveWidth = getMeasuredWidth() / visibleWaveCount;
+			mWaveHeight = getMeasuredWidth() / 10;
+			mLevel = mViewHeight = getMeasuredHeight();
+			mLeftSide = -mWaveWidth;
+			float x;
+			float y;
+			Point point;
+			for (int i = 0; i < 4 * visibleWaveCount + 1 + 4; i++) {
+				x = i * (mWaveWidth / 4) - mWaveWidth;
+				y = 0;
+				switch (i % 4) {
+				case 0:
+					y = mLevel;
+					break;
 
-			case 1:
-				y = mLevel - mWaveHeight;
-				break;
-			case 2:
-				y = mLevel;
-				break;
-			case 3:
-				y = mLevel + mWaveHeight;
-				break;
+				case 1:
+					y = mLevel - mWaveHeight;
+					break;
+				case 2:
+					y = mLevel;
+					break;
+				case 3:
+					y = mLevel + mWaveHeight;
+					break;
+				}
+				point = new Point(x, y);
+				wavePoints.add(point);
 			}
-			point = new Point(x, y);
-			wavePoints.add(point);
 		}
+
 	}
 
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
+
+		mPath.reset();
+
 		mPath.moveTo(wavePoints.get(0).getX(), wavePoints.get(0).getY());
 		int i = 0;
 		for (; i < wavePoints.size() - 2; i = i + 2) {
@@ -114,7 +123,7 @@ public class WaveView extends View {
 		mPath.lineTo(mLeftSide, mViewHeight);
 		mPath.close();
 		canvas.drawPath(mPath, mPaint);
-		mHandler.sendEmptyMessageDelayed(MOVE_MSG, 10);
+		mHandler.sendEmptyMessageDelayed(MOVE_MSG, 20);
 
 	}
 
@@ -125,6 +134,12 @@ public class WaveView extends View {
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
 			case MOVE_MSG:
+				if (wavePoints.get(0).getX() >= 0) {
+					resetXValue();
+					invalidate();
+					return;
+				}
+
 				// 重新计算每个点的位置；
 				mLevel -= speedVertical;
 				for (int i = 0; i < wavePoints.size(); i++) {
@@ -151,7 +166,14 @@ public class WaveView extends View {
 				break;
 
 			}
-		};
+		}
+
+	};
+
+	private void resetXValue() {
+		for (int i = 0; i < wavePoints.size(); i++) {
+			wavePoints.get(i).setX(i * (mWaveWidth / 4) - mWaveWidth);
+		}
 	};
 
 	private class Point {
