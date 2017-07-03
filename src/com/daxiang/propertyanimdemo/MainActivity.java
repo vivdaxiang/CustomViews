@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.daxiang.propertyanimdemo.animation.CustomEvaluator;
+import com.daxiang.propertyanimdemo.animation.FlowLayoutActivity;
 import com.daxiang.propertyanimdemo.animation.RotationActivity;
 import com.daxiang.propertyanimdemo.animation.StickyAnimActivity;
 import com.daxiang.propertyanimdemo.animation.SystemEvaluator;
@@ -36,6 +37,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		findViewById(R.id.customEvaluator).setOnClickListener(this);
 		findViewById(R.id.sticky).setOnClickListener(this);
 		findViewById(R.id.wave).setOnClickListener(this);
+		findViewById(R.id.flow_layout).setOnClickListener(this);
 	}
 
 	@Override
@@ -65,6 +67,12 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.wave:
 			startActivity(new Intent(MainActivity.this, WaveViewActivity.class));
 			break;
+
+		case R.id.flow_layout:
+			startActivity(new Intent(MainActivity.this,
+					FlowLayoutActivity.class));
+			break;
+
 		}
 	}
 

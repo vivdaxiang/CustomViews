@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.daxiang.propertyanimdemo.view.FlowLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="冈仁波齐" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="北京" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="摔跤吧！爸爸" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="老炮儿" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="飞屋环游记" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="西西里的美丽传说" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="天堂电影院" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="阿甘正传" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="肖申克的救赎" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="教父" />
+        <TextView
+            style="@style/text_flag_01"
+            android:text="湄公河行动" />
+    </com.daxiang.propertyanimdemo.view.FlowLayout>
+
+</LinearLayout>

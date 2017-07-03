@@ -48,6 +48,10 @@
             android:name="com.daxiang.propertyanimdemo.animation.WaveViewActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.daxiang.propertyanimdemo.animation.FlowLayoutActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>
