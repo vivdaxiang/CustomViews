@@ -1,2 +1,2 @@
-# PropertyAnimDemo
-Property Animation Demo.
+# CustomViews
+Property Animation and Custom View demos.
