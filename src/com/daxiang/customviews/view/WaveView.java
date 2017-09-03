@@ -1,4 +1,4 @@
-package com.daxiang.propertyanimdemo.view;
+package com.daxiang.customviews.view;
 
 import java.util.ArrayList;
 import java.util.List;

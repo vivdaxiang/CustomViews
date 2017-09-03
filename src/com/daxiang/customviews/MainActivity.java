@@ -1,4 +1,4 @@
-package com.daxiang.propertyanimdemo;
+package com.daxiang.customviews;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,13 +7,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.daxiang.propertyanimdemo.animation.CustomEvaluator;
-import com.daxiang.propertyanimdemo.animation.FlowLayoutActivity;
-import com.daxiang.propertyanimdemo.animation.RotationActivity;
-import com.daxiang.propertyanimdemo.animation.StickyAnimActivity;
-import com.daxiang.propertyanimdemo.animation.SystemEvaluator;
-import com.daxiang.propertyanimdemo.animation.TranslateActivity;
-import com.daxiang.propertyanimdemo.animation.WaveViewActivity;
+import com.daxiang.customviews.R;
+import com.daxiang.customviews.activity.CustomEvaluator;
+import com.daxiang.customviews.activity.FlowLayoutActivity;
+import com.daxiang.customviews.activity.RotationActivity;
+import com.daxiang.customviews.activity.StickyAnimActivity;
+import com.daxiang.customviews.activity.SystemEvaluator;
+import com.daxiang.customviews.activity.TranslateActivity;
+import com.daxiang.customviews.activity.WaveViewActivity;
 
 public class MainActivity extends Activity implements OnClickListener {
 

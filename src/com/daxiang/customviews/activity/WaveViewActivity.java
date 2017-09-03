@@ -1,6 +1,6 @@
-package com.daxiang.propertyanimdemo.animation;
+package com.daxiang.customviews.activity;
 
-import com.daxiang.propertyanimdemo.R;
+import com.daxiang.customviews.R;
 
 import android.app.Activity;
 import android.os.Bundle;

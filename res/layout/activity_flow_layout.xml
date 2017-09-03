@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.daxiang.propertyanimdemo.view.FlowLayout
+    <com.daxiang.customviews.view.FlowLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
@@ -47,9 +47,10 @@
         <TextView
             style="@style/text_flag_01"
             android:text="教父" />
-        <TextView
+
+        <TextView
             style="@style/text_flag_01"
             android:text="湄公河行动" />
-    </com.daxiang.propertyanimdemo.view.FlowLayout>
+    </com.daxiang.customviews.view.FlowLayout>
 
 </LinearLayout>

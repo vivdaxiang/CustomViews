@@ -1,7 +1,7 @@
-package com.daxiang.propertyanimdemo.animation;
+package com.daxiang.customviews.activity;
 
-import com.daxiang.propertyanimdemo.R;
-import com.daxiang.propertyanimdemo.view.StickyView;
+import com.daxiang.customviews.R;
+import com.daxiang.customviews.view.StickyView;
 
 import android.app.Activity;
 import android.os.Bundle;
