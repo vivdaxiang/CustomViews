@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BubbleImageView">
+
+        <!-- 箭头距离View的左边的距离 -->
+        <attr name="arrowStartMargin" format="dimension" />
+        <attr name="arrowWidth" format="dimension" />
+        <attr name="arrowHeight" format="dimension" />
+    </declare-styleable>
+
+</resources>

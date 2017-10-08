@@ -52,6 +52,10 @@
             android:name="com.daxiang.customviews.activity.FlowLayoutActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.daxiang.customviews.activity.BubbleImageViewActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

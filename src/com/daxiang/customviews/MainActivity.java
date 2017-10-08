@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.daxiang.customviews.R;
+import com.daxiang.customviews.activity.BubbleImageViewActivity;
 import com.daxiang.customviews.activity.CustomEvaluator;
 import com.daxiang.customviews.activity.FlowLayoutActivity;
 import com.daxiang.customviews.activity.RotationActivity;
@@ -39,6 +39,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		findViewById(R.id.sticky).setOnClickListener(this);
 		findViewById(R.id.wave).setOnClickListener(this);
 		findViewById(R.id.flow_layout).setOnClickListener(this);
+		findViewById(R.id.bubble_image_view).setOnClickListener(this);
 	}
 
 	@Override
@@ -72,6 +73,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.flow_layout:
 			startActivity(new Intent(MainActivity.this,
 					FlowLayoutActivity.class));
+			break;
+
+		case R.id.bubble_image_view:
+			startActivity(new Intent(MainActivity.this,
+					BubbleImageViewActivity.class));
 			break;
 
 		}
