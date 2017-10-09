@@ -1,6 +1,7 @@
 package com.daxiang.customviews.view;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -12,7 +13,9 @@ import android.graphics.Path;
 import android.graphics.Shader.TileMode;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.daxiang.customviews.R;
@@ -62,6 +65,7 @@ public class BubbleImageView extends ImageView {
 	private void init(Context context, AttributeSet attrs, int defStyleAttr,
 			int defStyleRes) {
 		mImagePaint = new Paint();
+		mImagePaint.setAntiAlias(true);
 		mPath = new Path();
 		mArrowWidth = 30;
 		mArrowHeight = 20;
@@ -129,6 +133,7 @@ public class BubbleImageView extends ImageView {
 		Logger.e(TAG, "onSizeChanged  width=" + w + "  height=" + h);
 	}
 
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 	@Override
 	protected void onDraw(Canvas canvas) {
 
@@ -157,7 +162,18 @@ public class BubbleImageView extends ImageView {
 				mPath.lineTo((getWidth() - mArrowWidth) / 2, mArrowHeight);
 				mPath.lineTo((getWidth() + mArrowWidth) / 2, mArrowHeight);
 				mPath.lineTo(getWidth() / 2, 0);
+			} else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1
+					&& getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+				// 阿拉伯语环境下布局是从右到左；
+				mPath.moveTo(getWidth() - mArrowStartMargin - mArrowWidth / 2,
+						0);
+				mPath.lineTo(getWidth() - mArrowStartMargin, mArrowHeight);
+				mPath.lineTo(getWidth() - mArrowStartMargin - mArrowWidth,
+						mArrowHeight);
+				mPath.moveTo(getWidth() - mArrowStartMargin - mArrowWidth / 2,
+						0);
 			} else {
+				// 从左到右
 				mPath.moveTo(mArrowStartMargin + mArrowWidth / 2, 0);
 				mPath.lineTo(mArrowStartMargin, mArrowHeight);
 				mPath.lineTo(mArrowStartMargin + mArrowWidth, mArrowHeight);
